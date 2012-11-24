@@ -19,6 +19,9 @@ module HowManyDylans
     def validate
       validates_presence [:dylans, :name]
       validates_unique :name
+
+      errors.add(:dylans, 'must be positive') unless dylans > 0
+      errors.add(:dylans, 'must have a max of 3') if dylans > 3
     end
   end
 
