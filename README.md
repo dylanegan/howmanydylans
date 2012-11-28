@@ -24,6 +24,10 @@ It probably isn't eptic. Try my [travel](https://github.com/dylanegan/travel) re
 
 @[DylanFM](https://github.com/DylanFM). He made the lovely imagery. He earns 3 Dylans, but because he is a Dylan too he now has 4 Dylans. Nothing else can be as awesome.
 
+![](http://farm7.staticflickr.com/6107/6218861922_830802c0a3_n.jpg)
+
+> Us, being fucking awesome.
+
 #### OK, but should I fucking care?
 
 No, probably not, but I don't fucking care either.
