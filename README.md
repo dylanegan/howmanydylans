@@ -27,3 +27,7 @@ It probably isn't eptic. Try my [travel](https://github.com/dylanegan/travel) re
 #### OK, but should I fucking care?
 
 No, probably not, but I don't fucking care either.
+
+So just go ahead and;
+
+![](https://github.com/dylanegan/howmanydylans/raw/master/deal.with.it.gif)
