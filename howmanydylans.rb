@@ -1,9 +1,8 @@
 ENV['RACK_ENV'] ||= "development"
-ENV['PORT'] ||= 5000
 
 require "grape"
 require "sequel"
-require "sinatra"
+require "sinatra/base"
 
 DB = Sequel.connect ENV['DATABASE_URL'] || "postgres://localhost/howmanydylans_#{ENV['RACK_ENV']}"
 
@@ -34,6 +33,10 @@ module HowManyDylans
       default_format :json
       format :json
       version 'v1', :using => :header, :vendor => 'howmanydylans'
+
+      http_basic do |username, password|
+        password == (ENV['HTTP_BASIC_PASSWORD'] || "youhaventsetapasswordnincompoop")
+      end
 
       resource :things do
         get ':thing' do
