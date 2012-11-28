@@ -1,4 +1,5 @@
 ENV['RACK_ENV'] ||= "development"
+$stdout.sync = true
 
 require "grape"
 require "sequel"
@@ -68,7 +69,7 @@ module HowManyDylans
 
   class Application < Sinatra::Base
     set :static, true
-    set :root, File.dirname(__FILE__)
+    set :root, File.dirname(__FILE__) + '/../'
 
     get '/things/:thing.png' do
       @thing = Thing.where(:name => params[:thing]).first

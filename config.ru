@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/howmanydylans'
+require File.dirname(__FILE__) + '/lib/howmanydylans'
 
 class ::Logger; alias_method :write, :<<; end
 logger = ENV['RACK_ENV'] == 'test' ? Logger.new('log/test.log') : Logger.new(STDOUT)
