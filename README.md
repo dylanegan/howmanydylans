@@ -26,7 +26,7 @@ It probably isn't eptic. Try my [travel](https://github.com/dylanegan/travel) re
 
 ![](http://farm7.staticflickr.com/6107/6218861922_830802c0a3_n.jpg)
 
-> Us, being fucking awesome.
+> @[DylanFM](https://github.com/DylanFM) (left) and me (right) having a blast at [funconf](http://2011.funconf.com).
 
 #### OK, but should I fucking care?
 
