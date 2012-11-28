@@ -4,7 +4,8 @@
       body {
         background: #007D80;
       }
-      div img {
+
+      img {
         margin: auto;
         position: absolute;
         top: 0px;
@@ -15,8 +16,6 @@
     </style>
   </head>
   <body>
-    <div>
-      <img src="/things/<%= @thing.name %>.png">
-    </div>
+    <img src="/things/<%= @thing.name %>.png">
   </body>
 </html>
