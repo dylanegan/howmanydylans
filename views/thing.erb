@@ -4,9 +4,19 @@
       body {
         background: #007D80;
       }
+      div img {
+        margin: auto;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+      }
     </style>
   </head>
   <body>
-    <img src="/things/<%= @thing.name %>.png">
+    <div>
+      <img src="/things/<%= @thing.name %>.png">
+    </div>
   </body>
 </html>
