@@ -1,5 +1,9 @@
+ENV['RACK_ENV'] ||= "development"
+ENV['PORT'] ||= 5000
+
 require "grape"
 require "sequel"
+require "sinatra"
 
 DB = Sequel.connect ENV['DATABASE_URL'] || "postgres://localhost/howmanydylans_#{ENV['RACK_ENV']}"
 
@@ -55,6 +59,31 @@ module HowManyDylans
             status 500
           end
         end
+      end
+    end
+  end
+
+  class Application < Sinatra::Base
+    set :static, true
+    set :root, File.dirname(__FILE__)
+
+    get '/things/:thing.png' do
+      @thing = Thing.where(:name => params[:thing]).first
+      if @thing
+        params[:banner] ?
+          redirect("/images/#{@thing.dylans}.dylans.png") :
+          redirect("/images/#{@thing.dylans}.dylans.banner.png")
+      else
+        404
+      end
+    end
+
+    get '/things/:thing' do
+      @thing = Thing.where(:name => params[:thing]).first
+      if @thing
+        erb :thing
+      else
+        404
       end
     end
   end
