@@ -71,6 +71,10 @@ module HowManyDylans
     set :static, true
     set :root, File.dirname(__FILE__) + '/../'
 
+    get '/' do
+      erb :index
+    end
+
     get '/things/:thing.png' do
       @thing = Thing.where(:name => params[:thing]).first
       if @thing
