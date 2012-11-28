@@ -8,7 +8,7 @@
 
 #### Who the fuck asked you?
 
-Either @copiousfreetime or @daksis.
+Either @[copiousfreetime](https://github.com/copiousfreetime) or @[daksis](https://github.com/daksis).
 
 #### What the fuck is the 'Dylans' system?
 
@@ -18,7 +18,7 @@ Amazing (1 Dylan), Shamazing (2 Dylans), and Mind Blown (3 Dylans) as shown belo
 
 #### I can't fucking find X!
 
-It probably isn't eptic. Try my [travel](http://github.com/dylanegan/travel) repository.
+It probably isn't eptic. Try my [travel](https://github.com/dylanegan/travel) repository.
 
 #### Who the fuck is awesome?
 
