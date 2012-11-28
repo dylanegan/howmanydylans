@@ -22,7 +22,7 @@ It probably isn't eptic. Try my [travel](https://github.com/dylanegan/travel) re
 
 #### Who the fuck is awesome?
 
-@DylanFM. He made the lovely imagery. He earns 3 Dylans, but because he is a Dylan too he now has 4 Dylans. Nothing else can be as awesome.
+@[DylanFM](https://github.com/DylanFM). He made the lovely imagery. He earns 3 Dylans, but because he is a Dylan too he now has 4 Dylans. Nothing else can be as awesome.
 
 #### OK, but should I fucking care?
 
