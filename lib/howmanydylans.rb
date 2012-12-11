@@ -79,8 +79,8 @@ module HowManyDylans
       @thing = Thing.where(:name => params[:thing]).first
       if @thing
         params[:banner] ?
-          redirect("/images/#{@thing.dylans}.dylans.png") :
-          redirect("/images/#{@thing.dylans}.dylans.banner.png")
+          redirect("/images/#{@thing.dylans}.dylans.banner.png") :
+          redirect("/images/#{@thing.dylans}.dylans.png")
       else
         404
       end
