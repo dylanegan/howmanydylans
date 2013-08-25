@@ -1,11 +1,11 @@
-ENV['RACK_ENV'] ||= "development"
+ENV["RACK_ENV"] ||= "development"
 $stdout.sync = true
 
 require "grape"
 require "sequel"
 require "sinatra/base"
 
-DB = Sequel.connect ENV['DATABASE_URL'] || "postgres://localhost/howmanydylans_#{ENV['RACK_ENV']}"
+DB = Sequel.connect ENV["DATABASE_URL"] || "postgres://localhost/howmanydylans_#{ENV["RACK_ENV"]}"
 
 Sequel.extension :migration
 
@@ -24,8 +24,8 @@ module HowManyDylans
       validates_presence [:dylans, :name]
       validates_unique :name
 
-      errors.add(:dylans, 'must be positive') unless dylans > 0
-      errors.add(:dylans, 'must have a max of 3') if dylans > 3
+      errors.add(:dylans, "must be positive") unless dylans > 0
+      errors.add(:dylans, "must have a max of 3") if dylans > 3
     end
   end
 
@@ -33,14 +33,14 @@ module HowManyDylans
     class V1 < Grape::API
       default_format :json
       format :json
-      version 'v1', :using => :header, :vendor => 'howmanydylans'
+      version "v1", :using => :header, :vendor => "howmanydylans"
 
       http_basic do |username, password|
-        password == (ENV['HTTP_BASIC_PASSWORD'] || "youhaventsetapasswordnincompoop")
+        password == (ENV["HTTP_BASIC_PASSWORD"] || "youhaventsetapasswordnincompoop")
       end
 
       resource :things do
-        get ':thing' do
+        get ":thing" do
           if @thing = Thing.where(:name => params[:thing]).first
             @thing
           else
@@ -48,11 +48,11 @@ module HowManyDylans
           end
         end
 
-        get 'similar/:thing' do
-          lower_unaccented_thing = DB["SELECT lower(unaccent_text('#{params[:thing]}'))"].first[:lower]
-          Thing.select(:id, :name, :dylans, Sequel.lit("similarity(name, '#{params[:thing]}')"))
-               .where("lower(unaccent_text(name)) ~~ ?", "%#{lower_unaccented_thing}%")
-               .order(Sequel.desc(Sequel.lit("similarity(name, '#{params[:thing]}')"))) 
+        get "similar/:thing" do
+          lower_unaccented_thing = DB["SELECT lower(unaccent_text(?))", params[:thing]].first[:lower]
+          Thing.select(:id, :name, :dylans, Sequel.lit("similarity(name, ?)", params[:thing])).
+               where("lower(unaccent_text(name)) ~~ ?", "%#{lower_unaccented_thing}%").
+               order(Sequel.desc(Sequel.lit("similarity(name, ?)", params[:thing])))
         end
 
         post do
@@ -69,13 +69,13 @@ module HowManyDylans
 
   class Application < Sinatra::Base
     set :static, true
-    set :root, File.dirname(__FILE__) + '/../'
+    set :root, File.dirname(__FILE__) + "/../"
 
-    get '/' do
+    get "/" do
       erb :index
     end
 
-    get '/things/:thing.png' do
+    get "/things/:thing.png" do
       @thing = Thing.where(:name => params[:thing]).first
       if @thing
         params[:banner] ?
@@ -86,7 +86,7 @@ module HowManyDylans
       end
     end
 
-    get '/things/:thing' do
+    get "/things/:thing" do
       @thing = Thing.where(:name => params[:thing]).first
       if @thing
         erb :thing

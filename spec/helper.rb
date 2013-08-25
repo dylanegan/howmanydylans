@@ -1,16 +1,16 @@
 require "minitest/autorun"
-require 'rack/test'
-require "simplecov" unless ENV['NO_SIMPLECOV']
+require "rack/test"
+require "simplecov" unless ENV["NO_SIMPLECOV"]
 
-ENV["RACK_ENV"] = 'test'
+ENV["RACK_ENV"] = "test"
 
-require 'howmanydylans'
+require "howmanydylans"
 
-require 'sinatra'
+require "sinatra"
 
 set :environment, :test
 
-require 'database_cleaner'
+require "database_cleaner"
 DatabaseCleaner.strategy = :transaction
 class MiniTest::Spec
   before :each do
