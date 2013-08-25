@@ -12,13 +12,13 @@ Either @[copiousfreetime](https://github.com/copiousfreetime) or @[daksis](https
 
 #### What the fuck is the 'Dylans' system?
 
-Amazing (1 Dylan), Shamazing (2 Dylans), and Mind Blown (3 Dylans) as shown below.
+Amazing (1 Dylan), Shamazing (2 Dylans), and Mind Blowning (3 Dylans) as shown below.
 
 ![](https://github.com/dylanegan/howmanydylans/raw/master/mind.blown.gif)
 
 #### I can't fucking find X!
 
-It probably isn't eptic. Try my [travel](https://github.com/dylanegan/travel) repository.
+It probably isn't eptic. Try my [travel](https://github.com/dylanegan/travel) repository instead.
 
 #### Who the fuck is awesome?
 
