@@ -1,0 +1,26 @@
+before_script:
+  - psql -c 'create database howmanydylans_test;' -U postgres
+
+env: DATABASE_URL=postgres://postgres:@localhost/howmanydylans_test
+
+language: ruby
+
+rvm:
+  - rbx-2.2.1
+
+cache: bundler
+
+branches:
+  only:
+  - master
+
+script: bundle exec rake test
+
+notifications:
+  email: false
+  campfire:
+    rooms:
+      secure: SSiAwQt9OD5MmtrTNgg9hwmx9xkegAjCC6H4CWbuHLlFXNbw/V+aOsrONsqRaFRmHE5RaecqEyyY7D0LnmPmFeJCPSY5ZVOhDXs33+8rx1t6rEKp3bJHCZ+PvrqypQp1MtY3y6MgHDinG8W1qjhVzWMer8wf/w5IsxcebvEBlRk=
+    on_failure: change
+    use_notice: true
+    skip_join: true
