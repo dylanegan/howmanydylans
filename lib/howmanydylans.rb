@@ -37,7 +37,7 @@ module HowManyDylans
 
       helpers do
         def authenticate!
-          error!('Unauthorized', 401) unless headers['Api-Token'] == (ENV["HTTP_BASIC_PASSWORD"] || "youhaventsetapasswordnincompoop")
+          error!('Unauthorized', 401) unless headers['Api-Token'] == (ENV["HOWMANYDYLANS_API_TOKEN"] || "youhaventsetapasswordnincompoop")
         end
       end
 
