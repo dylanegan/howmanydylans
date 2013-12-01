@@ -12,12 +12,10 @@ GEM
     coercible (0.2.0)
       backports (~> 3.0, >= 3.1.0)
       descendants_tracker (~> 0.0.1)
-    daemons (1.1.9)
     database_cleaner (1.2.0)
     descendants_tracker (0.0.3)
     docile (1.1.1)
     equalizer (0.0.7)
-    eventmachine (1.0.3)
     grape (0.6.1)
       activesupport
       builder
@@ -35,6 +33,8 @@ GEM
     multi_json (1.8.2)
     multi_xml (0.5.5)
     pg (0.17.0)
+    puma (2.6.0)
+      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -55,10 +55,6 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    thin (1.6.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 1.0.0)
-      rack (>= 1.0.0)
     tilt (1.4.1)
     virtus (1.0.0)
       axiom-types (~> 0.0.5)
@@ -74,9 +70,9 @@ DEPENDENCIES
   grape
   minitest
   pg
+  puma
   rack-test
   rake
   sequel
   simplecov
   sinatra
-  thin

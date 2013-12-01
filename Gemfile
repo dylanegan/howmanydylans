@@ -6,7 +6,7 @@ gem "pg"
 gem "rake"
 gem "sequel"
 gem "sinatra"
-gem "thin"
+gem "puma"
 
 group :test do
   gem "database_cleaner"
