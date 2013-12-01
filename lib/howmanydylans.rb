@@ -35,8 +35,10 @@ module HowManyDylans
       format :json
       version "v1", :using => :header, :vendor => "howmanydylans"
 
-      http_basic do |username, password|
-        password == (ENV["HTTP_BASIC_PASSWORD"] || "youhaventsetapasswordnincompoop")
+      helpers do
+        def authenticate!
+          error!('Unauthorized', 401) unless headers['Api-Token'] == (ENV["HTTP_BASIC_PASSWORD"] || "youhaventsetapasswordnincompoop")
+        end
       end
 
       resource :things do
@@ -56,6 +58,8 @@ module HowManyDylans
         end
 
         post do
+          authenticate!
+
           @thing = Thing.new(params[:thing])
           if @thing.save(:raise_on_failure => false)
             @thing

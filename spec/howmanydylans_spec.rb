@@ -7,10 +7,6 @@ describe HowManyDylans::API::V1 do
     HowManyDylans::API::V1.new
   end
 
-  before do
-    basic_authorize "", "youhaventsetapasswordnincompoop"
-  end
-
   describe "things" do
     describe "GET :thing" do
       describe "when existant" do
@@ -75,6 +71,10 @@ describe HowManyDylans::API::V1 do
     end
 
     describe "POST" do
+      before do
+        header "Api-Token", "youhaventsetapasswordnincompoop"
+      end
+
       describe "with a unique name and valid dylans" do
         before do
           post "/things", :thing => { :name => "thing", :dylans => 2 }
