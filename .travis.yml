@@ -6,7 +6,6 @@ env: DATABASE_URL=postgres://postgres:@localhost/howmanydylans_test
 language: ruby
 
 rvm:
-  - rbx-2.2.1
   - 2.0.0
 
 cache: bundler
