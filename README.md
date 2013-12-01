@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dylanegan/howmanydylans.png?branch=master)](https://travis-ci.org/dylanegan/howmanydylans)
+
 ## FAQ
 
 #### Huh? What the fuck?
